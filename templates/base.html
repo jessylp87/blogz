@@ -1,18 +1,57 @@
 <!doctype html>
 <html>
+
   <head>
-    <title>build-a-blog</title>
+    <title>Blogz</title>
     <style>
       .error { color: red; }
     </style>
   </head>
+  
   <body>
+    <table>
+      <tr>
 
-    <div>
-      <a href="/blog">Main Blog Page</a>
-      <a href="/newpost">Add a Blog Entry</a>
-    </div>
+        <form action="/">
+          <input type="submit" value="Home">      
+        </form>
+
+        <form action="/blog">
+          <input type="submit" value="All Blogs">      
+        </form>
+
+        <form action="/newpost">
+          <input type="submit" value="Add a Blog Entry">      
+        </form>
+
+        <form action="/signup">
+          <input type="submit" value="Signup">      
+        </form>
+
+        <form action="/login">
+          <input type="submit" value="Login">      
+        </form>
+      
+        <form action="/logout">
+          <input type="submit" value="Logout">      
+        </form>
+      </tr>
+
+    </table>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    
     {% block content %}
+
     {% endblock %}
 
   </body>

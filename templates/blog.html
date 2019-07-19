@@ -9,11 +9,13 @@
     {% else %}
       {% for blog in blogs %}
       <div>
-        <a href="/blog?b={{blog.id}}"><h2>{{blog.title}}</h2></a>
+        <a href="/blog?id={{blog.id}}"><h2>{{blog.title}}</h2></a>
         <p>{{blog.body}}</p>
+        <p><a href="/blog?user={{blog.owner_id}}">Written by: {{blog.owner.username}}</a></p>
         <hr  />
       </div>
 
       {% endfor%}
-    {% endif %}
+    {% endif %}        
+    
 {% endblock %}

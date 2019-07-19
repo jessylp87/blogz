@@ -6,6 +6,7 @@ app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:root@localhost:8889/blogz'
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
+app.secret_key = '95U60TmQqa3coPJC'
 
 class Blog(db.Model):
 
@@ -174,3 +175,6 @@ def index():
     
 if __name__ == '__main__':
     app.run() 
+
+
+#added missing logout, login, registration links
